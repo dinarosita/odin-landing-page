@@ -1,0 +1,162 @@
+/* style.css for Odin Landing Page Project */
+
+/* Variables */
+
+:root {
+    --darkback: #1F2937;
+    --mediumback: #E5E7EB;
+    --lightback: white;
+    --darktext: black;
+    --lighttext: white;
+    --funcolor: #3882F6;
+    --radius: 5px;
+    --smallgap: 8px;
+    --gap: 20px;
+    --biggap: 30px;
+}
+
+/* General formatting  and resets */
+
+*, *::before, *::after {
+    box-sizing: inherit;
+  }
+
+* {
+    color: inherit;
+}
+
+h1,
+p {
+    padding: 0;
+    margin: 0; 
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    font-style: normal;
+    text-decoration: none;
+}
+
+/* Body */
+
+body {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+/* Structure */
+
+body > div > div {
+    max-width: 1024px;
+    margin: auto;
+    padding: var(--smallgap);
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-logo {
+    font-weight: bold;
+}
+
+.header-navigation {
+    display: flex;
+    gap: var(--smallgap);
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.banner-section {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    gap: var(--biggap)
+}
+
+.banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smallgap);
+}
+
+.banner-section img {
+    width: 300px;
+    height: 150px;
+}
+
+/* Information section */
+
+.information-section {
+
+}
+
+/* Quote section */
+
+.quote-section {
+
+}
+
+/* Sign up section */
+
+.signup-section {
+
+}
+
+/* Footer section */
+
+.footer-section {
+
+}
+
+/* Background colors */
+
+.header-band,
+.banner-band,
+.footer-band {
+    background-color: var(--darkback);
+}
+
+.information-band,
+.signup-band {
+    background-color: var(--lightback);
+}
+
+.quote-band,
+.banner-band figure {
+    background-color: var(--mediumback);
+}
+
+.button {
+    margin-right: auto;
+    line-height: 2em;
+    background-color: var(--funcolor);
+    padding: 0 var(--gap);
+    border-radius: var(--radius);
+    font-weight: bold;
+}
+
+/* Text colors */
+
+.header-section,
+.banner-section,
+.signup-section,
+.footer-section {
+    color: var(--lighttext);
+}
+
+.information-section,
+.quote-section {
+    color: var(--darktext);
+}
