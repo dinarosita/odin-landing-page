@@ -3,16 +3,16 @@
 /* Variables */
 
 :root {
-    --darkback: #1F2937;
-    --mediumback: #E5E7EB;
-    --lightback: white;
-    --darktext: black;
-    --lighttext: white;
-    --funcolor: #3882F6;
-    --radius: 5px;
-    --smallgap: 8px;
-    --gap: 20px;
-    --biggap: 30px;
+    --black: #1F2937;
+    --gray: #E5E7EB;
+    --white: white;
+    --white-title: #F9FAF8;
+    --white-text: #E5E7EB;
+    --blue: #3882F6;
+    --thin: 8px;
+    --med: 20px;
+    --thick: 30px;
+    --thicker: 60px;
 }
 
 /* General formatting  and resets */
@@ -26,6 +26,7 @@
 }
 
 h1,
+h2,
 p {
     padding: 0;
     margin: 0; 
@@ -46,7 +47,7 @@ a {
 
 body {
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Roboto', sans-serif;
     line-height: 1.4;
     display: flex;
@@ -59,7 +60,7 @@ body {
 body > div > div {
     max-width: 1024px;
     margin: auto;
-    padding: var(--smallgap);
+    padding: var(--thin);
 }
 
 .header-section {
@@ -73,7 +74,7 @@ body > div > div {
 
 .header-navigation {
     display: flex;
-    gap: var(--smallgap);
+    gap: var(--thin);
     justify-content: flex-end;
     align-items: center;
 }
@@ -82,24 +83,51 @@ body > div > div {
     display: flex;
     justify-content: stretch;
     align-items: center;
-    gap: var(--biggap)
+    gap: var(--thick)
 }
 
 .banner-text {
     display: flex;
     flex-direction: column;
-    gap: var(--smallgap);
+    gap: var(--thin);
 }
 
 .banner-section img {
-    width: 300px;
-    height: 150px;
+    width: 400px;
+    height: 200px;
 }
 
-/* Information section */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--thick);
+}
 
-.information-section {
+.info-collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: var(--thick)
+}
 
+.info-box {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-box img {
+    width: 200px;
+    height: 200px;
+    border: 5px solid var(--blue);
+    border-radius: 15px;
+}
+
+.info-box p {
+    text-align: center;
 }
 
 /* Quote section */
@@ -120,43 +148,88 @@ body > div > div {
 
 }
 
-/* Background colors */
+/* Extra spacing */
+
+.banner-section,
+.signup-section {
+    padding: var(--thicker) 0;
+}
+
+.info-section {
+    padding: var(--thick) var(--thicker) var(--thicker);
+}
+
+.quote-section {
+    padding: var(--thicker);
+}
+
+/* Colors */
 
 .header-band,
 .banner-band,
 .footer-band {
-    background-color: var(--darkback);
+    background-color: var(--black);
 }
 
-.information-band,
+.info-band,
 .signup-band {
-    background-color: var(--lightback);
+    background-color: var(--white);
 }
 
 .quote-band,
 .banner-band figure {
-    background-color: var(--mediumback);
+    background-color: var(--gray);
 }
 
 .button {
     margin-right: auto;
     line-height: 2em;
-    background-color: var(--funcolor);
-    padding: 0 var(--gap);
-    border-radius: var(--radius);
+    background-color: var(--blue);
+    padding: 0 var(--med);
+    border-radius: 8px;
     font-weight: bold;
 }
-
-/* Text colors */
 
 .header-section,
 .banner-section,
 .signup-section,
 .footer-section {
-    color: var(--lighttext);
+    color: var(--white-text);
 }
 
-.information-section,
-.quote-section {
-    color: var(--darktext);
+.header-section title,
+.banner-section title {
+    color: var(--white-title);
 }
+
+.info-section,
+.quote-section {
+    color: var(--black);
+}
+
+.header-logo {
+    font-size: 24px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.quote-text {
+    font-size: 36px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.quote-author {
+    font-weight: bold;
+    text-align: right;
+}
+
+
