@@ -1,6 +1,21 @@
 /* style.css for Odin Landing Page Project */
 
-/* Variables */
+/* General: Variables, resets, general formats */
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;    
+}
 
 :root {
     --black: #1F2937;
@@ -9,13 +24,11 @@
     --white-title: #F9FAF8;
     --white-text: #E5E7EB;
     --blue: #3882F6;
-    --thin: 8px;
-    --med: 20px;
-    --thick: 30px;
+    --thin: 16px;
+    --med: 30px;
+    --thick: 48px;
     --thicker: 60px;
 }
-
-/* General formatting  and resets */
 
 *, *::before, *::after {
     box-sizing: inherit;
@@ -25,8 +38,6 @@
     color: inherit;
 }
 
-h1,
-h2,
 p {
     padding: 0;
     margin: 0; 
@@ -43,29 +54,108 @@ a {
     text-decoration: none;
 }
 
-/* Body */
-
-body {
-    box-sizing: border-box;
-    font-size: 18px;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.4;
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
+.button {
+    line-height: 2em;
+    background-color: var(--blue);
+    padding: 0 var(--med);
+    border-radius: var(--thin);
+    font-weight: bold;
 }
 
-/* Structure */
+/* Special fonts and colors */
 
-body > div > div {
-    max-width: 1024px;
+.header-logo,
+.banner-title,
+.action-title {
+    color: var(--white-title);
+}
+
+.banner-title {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.info-title {
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.action-title, 
+.header-logo {
+    font-size: 24px;
+}
+
+.quote-text {
+    font-size: 36px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.quote-author {
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Bands structure */
+
+.banner-band,
+.info-band,
+.quote-band,
+.action-band {
+    flex: 1 1 auto;
+    display: flex;
+}
+
+.header-band,
+.banner-band,
+.footer-band {
+    background-color: var(--black);
+    color: var(--white-text);
+}
+
+.info-band {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.action-band {
+    background-color: var(--white);
+    color: var(--white-text);
+}
+
+.quote-band {
+    background-color: var(--gray);
+    color: var(--black);
+}
+
+/* Sections within max width */
+
+.header-section,
+.banner-section,
+.info-section,
+.quote-section,
+.action-section,
+.footer-section {
+    max-width: 1000px;
     margin: auto;
     padding: var(--thin);
 }
 
+.info-section {
+    margin: var(--med) auto auto;
+}
+
+.footer-section {
+    padding: var(--med);
+    text-align: center;
+}
+
+/* Header section */
+
 .header-section {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .header-logo {
@@ -74,35 +164,45 @@ body > div > div {
 
 .header-navigation {
     display: flex;
-    gap: var(--thin);
+    flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
+    gap: var(--thin);
 }
+
+/* Banner section */
 
 .banner-section {
     display: flex;
+    flex-wrap: wrap;
     justify-content: stretch;
     align-items: center;
-    gap: var(--thick)
+    gap: var(--med)
 }
 
 .banner-text {
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     gap: var(--thin);
 }
 
-.banner-section img {
-    width: 400px;
-    height: 200px;
+.banner-section .button {
+    margin-right: auto;
 }
+
+.banner-section img {
+    width: 300px;
+    height: 150px;
+}
+
+/* Info section */
 
 .info-section {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    gap: var(--thick);
+    gap: var(--med);
 }
 
 .info-collection {
@@ -110,7 +210,7 @@ body > div > div {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    gap: var(--thick)
+    gap: var(--med)
 }
 
 .info-box {
@@ -133,103 +233,45 @@ body > div > div {
 /* Quote section */
 
 .quote-section {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--med);
 }
 
-/* Sign up section */
-
-.signup-section {
-
+.quote-box {
+    max-width: 80%;
+    margin: auto;
 }
 
-/* Footer section */
+/* Action section */
 
-.footer-section {
+.action-section {
+    width: 100%;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--med);
 }
 
-/* Extra spacing */
-
-.banner-section,
-.signup-section {
-    padding: var(--thicker) 0;
-}
-
-.info-section {
-    padding: var(--thick) var(--thicker) var(--thicker);
-}
-
-.quote-section {
-    padding: var(--thicker);
-}
-
-/* Colors */
-
-.header-band,
-.banner-band,
-.footer-band {
-    background-color: var(--black);
-}
-
-.info-band,
-.signup-band {
-    background-color: var(--white);
-}
-
-.quote-band,
-.banner-band figure {
-    background-color: var(--gray);
-}
-
-.button {
-    margin-right: auto;
-    line-height: 2em;
+.action-box {
     background-color: var(--blue);
-    padding: 0 var(--med);
-    border-radius: 8px;
-    font-weight: bold;
+    padding: var(--med) var(--thicker);
+    border-radius: var(--thin);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--med);
+    flex-wrap: wrap;
 }
 
-.header-section,
-.banner-section,
-.signup-section,
-.footer-section {
-    color: var(--white-text);
+.action-text {
+    max-width: 600px;
 }
-
-.header-section title,
-.banner-section title {
-    color: var(--white-title);
+.action-section .button {
+    border: 3px solid var(--white-text);
 }
-
-.info-section,
-.quote-section {
-    color: var(--black);
-}
-
-.header-logo {
-    font-size: 24px;
-}
-
-h1 {
-    font-size: 48px;
-    font-weight: 900;
-}
-
-h2 {
-    font-size: 36px;
-    font-weight: 900;
-}
-
-.quote-text {
-    font-size: 36px;
-    font-weight: 300;
-    font-style: italic;
-}
-
-.quote-author {
-    font-weight: bold;
-    text-align: right;
-}
-
-
